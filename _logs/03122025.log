@@ -1,0 +1,541 @@
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:00'
+}
+{
+  message: 'MongoDB connected',
+  level: 'info',
+  timestamp: '03-12-2025 15:19:00'
+}
+{
+  message: 'Server running on port http://localhost:5000',
+  level: 'info',
+  timestamp: '03-12-2025 15:19:00'
+}
+{
+  message: '_________________________',
+  level: 'info',
+  timestamp: '03-12-2025 15:19:00'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:01'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:01'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:01'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:02'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:03'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:04'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:06'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:09'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:11'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:13'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:15'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:17'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:19'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:21'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:23'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:25'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:27'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:29'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:32'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:34'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:36'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:38'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:40'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:42'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:44'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:46'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:48'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:51'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:53'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:55'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:57'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:19:59'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:01'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:03'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:05'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:07'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:10'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:12'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:14'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:16'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:18'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:20'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:22'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:24'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:26'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:29'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:31'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:33'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:35'
+}
+{
+  code: 'ECONNREFUSED',
+  level: 'error',
+  message: 'Redis error:',
+  stack: 'AggregateError [ECONNREFUSED]: \n' +
+    '    at internalConnectMultiple (node:net:1134:18)\n' +
+    '    at afterConnectMultiple (node:net:1715:7)',
+  timestamp: '03-12-2025 15:20:37'
+}
+{
+  message: 'MongoDB connected',
+  level: 'info',
+  timestamp: '03-12-2025 15:42:31'
+}
+{
+  message: 'Server running on port http://localhost:5000',
+  level: 'info',
+  timestamp: '03-12-2025 15:42:31'
+}
+{
+  message: '_________________________',
+  level: 'info',
+  timestamp: '03-12-2025 15:42:31'
+}
+{
+  message: 'Redis has been connected',
+  level: 'info',
+  timestamp: '03-12-2025 15:42:32'
+}
+{
+  level: 'info',
+  message: 'Validation Result',
+  timestamp: '03-12-2025 15:52:03'
+}
+{
+  errno: -4077,
+  code: 'ECONNRESET',
+  syscall: 'read',
+  level: 'error',
+  message: 'Redis error: read ECONNRESET',
+  stack: 'Error: read ECONNRESET\n' +
+    '    at TCP.onStreamRead (node:internal/stream_base_commons:216:20)',
+  timestamp: '03-12-2025 15:56:48'
+}
+{
+  level: 'info',
+  message: 'Validation Result',
+  timestamp: '03-12-2025 15:56:51'
+}
+{
+  level: 'error',
+  message: 'Redis error: Connection timeout',
+  stack: 'Error: Connection timeout\n' +
+    '    at Socket.onTimeout (D:\\Projects\\IT Learning\\lifelineit-back\\node_modules\\@redis\\client\\dist\\lib\\client\\socket.js:180:46)\n' +
+    '    at Object.onceWrapper (node:events:632:28)\n' +
+    '    at Socket.emit (node:events:518:28)\n' +
+    '    at Socket._onTimeout (node:net:604:8)\n' +
+    '    at listOnTimeout (node:internal/timers:588:17)\n' +
+    '    at process.processTimers (node:internal/timers:523:7)',
+  timestamp: '03-12-2025 15:56:53'
+}
+{
+  message: 'Redis has been connected',
+  level: 'info',
+  timestamp: '03-12-2025 15:56:53'
+}
+{
+  level: 'info',
+  message: 'Validation Result',
+  timestamp: '03-12-2025 16:20:26'
+}
+{
+  level: 'info',
+  message: 'Existing Student',
+  timestamp: '03-12-2025 16:25:07'
+}
