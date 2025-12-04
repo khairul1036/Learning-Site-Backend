@@ -14,6 +14,7 @@ const {
 const {
   addNotice,
   viewNotice,
+  updateNotice,
   deleteNotice,
 } = require("@controllers/dashboard/notice.controller")
 
@@ -49,9 +50,11 @@ router.get(
   dashboardController
 )
 
-router.get("/notices", viewNotice)
-router.post("/notices", addNotice)
-router.delete("/notices/delete/:id", deleteNotice)
+// notice route
+router.get("/notices", viewNotice);
+router.post("/notices", verifyJWT, addNotice)
+router.patch("/notices/:id", verifyJWT, updateNotice)
+router.delete("/notices/:id", verifyJWT, deleteNotice)
 
 router.post(
   "/reset",

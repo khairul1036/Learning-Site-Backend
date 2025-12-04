@@ -962,3 +962,86 @@
   level: 'info',
   timestamp: '04-12-2025 16:13:23'
 }
+{
+  message: 'MongoDB connected',
+  level: 'info',
+  timestamp: '04-12-2025 16:14:24'
+}
+{
+  message: 'Server running on port http://localhost:5000',
+  level: 'info',
+  timestamp: '04-12-2025 16:14:24'
+}
+{
+  message: '_________________________',
+  level: 'info',
+  timestamp: '04-12-2025 16:14:24'
+}
+{
+  message: 'Redis has been connected',
+  level: 'info',
+  timestamp: '04-12-2025 16:14:25'
+}
+{
+  level: 'error',
+  message: "Cannot destructure property 'studentId' of 'findCertificate' as it is null.",
+  stack: "TypeError: Cannot destructure property 'studentId' of 'findCertificate' as it is null.\n" +
+    '    at exports.findCertificate (D:\\Projects\\IT Learning\\lifelineit-back\\controllers\\admin\\certificate.controller.js:26:13)\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)',
+  timestamp: '04-12-2025 16:19:51'
+}
+{
+  message: 'MongoDB connected',
+  level: 'info',
+  timestamp: '04-12-2025 16:36:08'
+}
+{
+  message: 'Server running on port http://localhost:5000',
+  level: 'info',
+  timestamp: '04-12-2025 16:36:08'
+}
+{
+  message: '_________________________',
+  level: 'info',
+  timestamp: '04-12-2025 16:36:08'
+}
+{
+  message: 'MongoDB connected',
+  level: 'info',
+  timestamp: '04-12-2025 16:40:33'
+}
+{
+  message: 'Server running on port http://localhost:5000',
+  level: 'info',
+  timestamp: '04-12-2025 16:40:33'
+}
+{
+  message: '_________________________',
+  level: 'info',
+  timestamp: '04-12-2025 16:40:33'
+}
+{
+  message: 'Redis has been connected',
+  level: 'info',
+  timestamp: '04-12-2025 16:40:34'
+}
+{
+  message: 'MongoDB connected',
+  level: 'info',
+  timestamp: '04-12-2025 16:40:45'
+}
+{
+  message: 'Server running on port http://localhost:5000',
+  level: 'info',
+  timestamp: '04-12-2025 16:40:45'
+}
+{
+  message: '_________________________',
+  level: 'info',
+  timestamp: '04-12-2025 16:40:45'
+}
+{
+  message: 'Redis has been connected',
+  level: 'info',
+  timestamp: '04-12-2025 16:40:46'
+}
