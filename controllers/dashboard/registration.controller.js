@@ -14,7 +14,7 @@ exports.registrationController = async (req, res) => {
 
     // Input Decorations
     if (!isNaN(Number(studentId))) {
-      studentId = `CH-${studentId}`
+      studentId = `LIT-${studentId}`
     }
     courseId = courseId.toLowerCase().split(" ").join("-")
 
