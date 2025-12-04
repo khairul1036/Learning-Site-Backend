@@ -50,7 +50,7 @@ router.get(
   dashboardController
 )
 
-// notice route
+// notice route - fixed
 router.get("/notices", viewNotice);
 router.post("/notices", verifyJWT, addNotice)
 router.patch("/notices/:id", verifyJWT, updateNotice)
