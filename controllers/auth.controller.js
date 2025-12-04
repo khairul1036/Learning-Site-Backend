@@ -149,13 +149,19 @@ exports.loginController = async (req, res) => {
       process.env.JWT_SECRET
     )
 
+    // res.cookie("token", token, {
+    //   httpOnly: true,
+    //   secure: true,
+    //   sameSite: "None",
+    //   domain: ".3dclusterhub.com",
+    //   maxAge: 86400000,
+    //   path: "/",
+    // })
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,
-      sameSite: "None",
-      domain: ".lifelineitinstitute.com",
+      secure: false,     // local
+      sameSite: "Lax",
       maxAge: 86400000,
-      path: "/",
     })
 
     res.json({
@@ -171,13 +177,21 @@ exports.loginController = async (req, res) => {
   }
 }
 
+// exports.logoutController = (req, res) => {
+//   res.clearCookie("token", {
+//     domain: ".3dclusterhub.com",
+//     path: "/",
+//     secure: true,
+//     sameSite: "None",
+//   })
+
 exports.logoutController = (req, res) => {
   res.clearCookie("token", {
-    domain: ".lifelineitinstitute.com",
-    path: "/",
-    secure: true,
-    sameSite: "None",
-  })
+    httpOnly: true,
+    secure: false,  // localhost এ false রাখতে হবে
+    sameSite: "Lax",
+    path: "/",       // path required
+  });
   return res
     .status(200)
     .json({ logout: true, message: "Logged out successfully" })

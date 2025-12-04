@@ -23,10 +23,6 @@ const allowedOrigins = [
   "http://localhost:5175",
   "http://localhost:5176",
   "http://localhost:5177",
-
-  // "https://lifelineitinstitute.com",
-  // "https://dashboard.lifelineitinstitute.com",
-  // "https://admin.lifelineitinstitute.com",
 ]
 // মেক শিওর করিয়েন যে লিংক এর পরে কোন / বা কিচ্ছু নাই, জাস্ট প্লেইন URL
 
@@ -48,7 +44,7 @@ app.use("/logs", auth, express.static(path.join(__dirname, "_logs")))
 
 app.get("/", (req, res) => {
   // Public URL goes here
-  res.redirect("https://lifelineitinstitute.com")
+  res.redirect("https://3dclusterhub.com")
 })
 
 // CODE SAFETY

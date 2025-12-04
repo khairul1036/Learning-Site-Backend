@@ -76,7 +76,7 @@ const modulesSchema = new mongoose.Schema(
       },
     },
   ],
-  { _id: false }
+  { _id: true }
 )
 
 const courseSchema = new mongoose.Schema(
