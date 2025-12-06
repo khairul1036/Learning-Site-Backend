@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Cluster Vector Icon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 20px;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 900px;
+            gap: 40px;
+        }
+        
+        .icon-display {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+        
+        .icon-display::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border-radius: 15px;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            box-shadow: 
+                0 4px 20px rgba(0, 0, 0, 0.05),
+                0 0 0 1px rgba(0, 0, 0, 0.03);
+            z-index: 1;
+        }
+        
+        .icon-svg {
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+            width: 320px;
+            height: 320px;
+        }
+        
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .control-group {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            min-width: 200px;
+        }
+        
+        .control-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        
+        .color-options {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+        
+        .color-option.active {
+            border-color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .color-red { background: #ff2e2e; }
+        .color-blue { background: #2e5bff; }
+        .color-green { background: #00c853; }
+        .color-purple { background: #7b1fa2; }
+        .color-orange { background: #ff6d00; }
+        
+        .background-options {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .bg-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .bg-option:hover {
+            transform: scale(1.1);
+        }
+        
+        .bg-option.active {
+            border-color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .bg-white { background: white; border: 1px solid #ddd; }
+        .bg-transparent { 
+            background: 
+                linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+                linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+                linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+        .bg-dark { background: #1a1a1a; }
+        .bg-gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        
+        .symbolism {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            margin-top: 20px;
+        }
+        
+        .symbolism-title {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+        
+        .symbolism-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .symbol-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            border-radius: 12px;
+            background: #f8f9fa;
+            transition: transform 0.3s ease;
+        }
+        
+        .symbol-item:hover {
+            transform: translateY(-5px);
+            background: #e9ecef;
+        }
+        
+        .symbol-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: #ff2e2e;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .symbol-text h4 {
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .symbol-text p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .usage-note {
+            text-align: center;
+            color: #666;
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .download-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .download-btn {
+            background: #ff2e2e;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 46, 46, 0.3);
+        }
+        
+        .download-btn:hover {
+            background: #d10000;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 46, 46, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .icon-display {
+                width: 300px;
+                height: 300px;
+                padding: 40px;
+            }
+            
+            .icon-svg {
+                width: 240px;
+                height: 240px;
+            }
+            
+            .symbolism-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon-display">
+            <svg class="icon-svg" viewBox="0 0 200 200" id="main-icon">
+                <!-- Subtle background glow -->
+                <defs>
+                    <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#ff2e2e" stop-opacity="0.9"/>
+                        <stop offset="100%" stop-color="#d10000" stop-opacity="0.9"/>
+                    </linearGradient>
+                    
+                    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="rgba(0,0,0,0.2)"/>
+                        <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(0,0,0,0.1)"/>
+                    </filter>
+                    
+                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#000000" stop-opacity="0.8"/>
+                        <stop offset="50%" stop-color="#000000" stop-opacity="1"/>
+                        <stop offset="100%" stop-color="#000000" stop-opacity="0.8"/>
+                    </linearGradient>
+                </defs>
+                
+                <!-- Main 3D Cube Structure -->
+                <!-- Back face (slightly faded) -->
+                <polygon points="70,70 130,70 120,90 80,90" fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.6"/>
+                <polygon points="70,70 70,130 80,150 80,90" fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.6"/>
+                <polygon points="130,70 130,130 120,150 120,90" fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.6"/>
+                
+                <!-- Front face (bold) -->
+                <polygon points="80,90 120,90 130,110 70,110" fill="none" stroke="#000000" stroke-width="2.5"/>
+                <polygon points="80,90 80,150 90,170 90,110" fill="none" stroke="#000000" stroke-width="2.5"/>
+                <polygon points="120,90 120,150 110,170 110,110" fill="none" stroke="#000000" stroke-width="2.5"/>
+                
+                <!-- Top face -->
+                <polygon points="70,110 130,110 120,130 80,130" fill="none" stroke="#000000" stroke-width="2.2"/>
+                
+                <!-- Cluster Network Lines -->
+                <!-- Internal cube connections -->
+                <line x1="100" y1="100" x2="80" y2="90" stroke="url(#lineGradient)" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="100" y1="100" x2="120" y2="90" stroke="url(#lineGradient)" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="100" y1="100" x2="80" y2="150" stroke="url(#lineGradient)" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="100" y1="100" x2="120" y2="150" stroke="url(#lineGradient)" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="100" y1="100" x2="70" y2="110" stroke="url(#lineGradient)" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="100" y1="100" x2="130" y2="110" stroke="url(#lineGradient)" stroke-width="1.5" stroke-linecap="round"/>
+                
+                <!-- External cluster connections -->
+                <line x1="100" y1="100" x2="50" y2="60" stroke="#000000" stroke-width="1.2" stroke-dasharray="3,2" stroke-opacity="0.7"/>
+                <line x1="100" y1="100" x2="150" y2="60" stroke="#000000" stroke-width="1.2" stroke-dasharray="3,2" stroke-opacity="0.7"/>
+                <line x1="100" y1="100" x2="50" y2="140" stroke="#000000" stroke-width="1.2" stroke-dasharray="3,2" stroke-opacity="0.7"/>
+                <line x1="100" y1="100" x2="150" y2="140" stroke="#000000" stroke-width="1.2" stroke-dasharray="3,2" stroke-opacity="0.7"/>
+                <line x1="100" y1="100" x2="40" y2="100" stroke="#000000" stroke-width="1.2" stroke-dasharray="3,2" stroke-opacity="0.7"/>
+                <line x1="100" y1="100" x2="160" y2="100" stroke="#000000" stroke-width="1.2" stroke-dasharray="3,2" stroke-opacity="0.7"/>
+                
+                <!-- Digital Nodes -->
+                <!-- Primary red nodes (cube vertices) -->
+                <circle cx="80" cy="90" r="5" fill="url(#nodeGradient)" filter="url(#shadow)"/>
+                <circle cx="120" cy="90" r="5" fill="url(#nodeGradient)" filter="url(#shadow)"/>
+                <circle cx="80" cy="150" r="5" fill="url(#nodeGradient)" filter="url(#shadow)"/>
+                <circle cx="120" cy="150" r="5" fill="url(#nodeGradient)" filter="url(#shadow)"/>
+                <circle cx="70" cy="110" r="5" fill="url(#nodeGradient)" filter="url(#shadow)"/>
+                <circle cx="130" cy="110" r="5" fill="url(#nodeGradient)" filter="url(#shadow)"/>
+                
+                <!-- Central knowledge hub (larger red node) -->
+                <circle cx="100" cy="100" r="8" fill="url(#nodeGradient)" filter="url(#shadow)">
+                    <animate attributeName="r" values="8;9;8" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                
+                <!-- External cluster nodes (black) -->
+                <circle cx="50" cy="60" r="4" fill="#000000" opacity="0.8"/>
+                <circle cx="150" cy="60" r="4" fill="#000000" opacity="0.8"/>
+                <circle cx="50" cy="140" r="4" fill="#000000" opacity="0.8"/>
+                <circle cx="150" cy="140" r="4" fill="#000000" opacity="0.8"/>
+                <circle cx="40" cy="100" r="4" fill="#000000" opacity="0.8"/>
+                <circle cx="160" cy="100" r="4" fill="#000000" opacity="0.8"/>
+                
+                <!-- Subtle coding brackets -->
+                <path d="M30,100 Q35,95 40,100 Q35,105 30,100" fill="none" stroke="#ff2e2e" stroke-width="1.5" opacity="0.5"/>
+                <path d="M170,100 Q165,95 160,100 Q165,105 170,100" fill="none" stroke="#ff2e2e" stroke-width="1.5" opacity="0.5"/>
+                
+                <!-- Data flow lines -->
+                <path d="M60,40 Q80,50 100,60" fill="none" stroke="#ff2e2e" stroke-width="1" stroke-dasharray="2,2" opacity="0.4"/>
+                <path d="M140,40 Q120,50 100,60" fill="none" stroke="#ff2e2e" stroke-width="1" stroke-dasharray="2,2" opacity="0.4"/>
+                <path d="M60,160 Q80,150 100,140" fill="none" stroke="#ff2e2e" stroke-width="1" stroke-dasharray="2,2" opacity="0.4"/>
+                <path d="M140,160 Q120,150 100,140" fill="none" stroke="#ff2e2e" stroke-width="1" stroke-dasharray="2,2" opacity="0.4"/>
+            </svg>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <div class="control-title">Accent Color</div>
+                <div class="color-options">
+                    <div class="color-option color-red active" data-color="#ff2e2e"></div>
+                    <div class="color-option color-blue" data-color="#2e5bff"></div>
+                    <div class="color-option color-green" data-color="#00c853"></div>
+                    <div class="color-option color-purple" data-color="#7b1fa2"></div>
+                    <div class="color-option color-orange" data-color="#ff6d00"></div>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <div class="control-title">Background</div>
+                <div class="background-options">
+                    <div class="bg-option bg-white active" data-bg="white"></div>
+                    <div class="bg-option bg-transparent" data-bg="transparent"></div>
+                    <div class="bg-option bg-dark" data-bg="#1a1a1a"></div>
+                    <div class="bg-option bg-gradient" data-bg="gradient"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="symbolism">
+            <h3 class="symbolism-title">Icon Symbolism & Meaning</h3>
+            <div class="symbolism-grid">
+                <div class="symbol-item">
+                    <div class="symbol-icon">3D</div>
+                    <div class="symbol-text">
+                        <h4>3D Cube Structure</h4>
+                        <p>Represents three-dimensional thinking, depth of knowledge, and multidimensional tech education.</p>
+                    </div>
+                </div>
+                
+                <div class="symbol-item">
+                    <div class="symbol-icon">⚡</div>
+                    <div class="symbol-text">
+                        <h4>Cluster Network</h4>
+                        <p>Interconnected nodes symbolize collaborative learning, network architecture, and community.</p>
+                    </div>
+                </div>
+                
+                <div class="symbol-item">
+                    <div class="symbol-icon">🔴</div>
+                    <div class="symbol-text">
+                        <h4>Red Knowledge Nodes</h4>
+                        <p>Key learning points, important concepts, and core technical skills in the curriculum.</p>
+                    </div>
+                </div>
+                
+                <div class="symbol-item">
+                    <div class="symbol-icon">🔄</div>
+                    <div class="symbol-text">
+                        <h4>Data Flow Lines</h4>
+                        <p>Dashed lines represent coding logic, data transmission, and continuous learning flow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="usage-note">
+            <p>This vector icon is designed as pure SVG with geometric precision. It maintains perfect clarity at any size from favicon (16×16) to large format printing. The balanced symmetry and minimal lines create a premium tech aesthetic suitable for all branding applications.</p>
+        </div>
+        
+        <div class="download-section">
+            <button class="download-btn" onclick="downloadSVG()">Download SVG Vector</button>
+        </div>
+    </div>
+    
+    <script>
+        // Color change functionality
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.color-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                const color = this.getAttribute('data-color');
+                updateIconColor(color);
+            });
+        });
+        
+        // Background change functionality
+        document.querySelectorAll('.bg-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.bg-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                const bg = this.getAttribute('data-bg');
+                updateBackground(bg);
+            });
+        });
+        
+        function updateIconColor(color) {
+            const svg = document.getElementById('main-icon');
+            
+            // Update gradient stops
+            const gradient = svg.querySelector('#nodeGradient');
+            gradient.innerHTML = `
+                <stop offset="0%" stop-color="${color}" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="${this.darkenColor(color, 20)}" stop-opacity="0.9"/>
+            `;
+            
+            // Update red elements
+            const redElements = svg.querySelectorAll('[stroke="#ff2e2e"], [stroke=\'#ff2e2e\']');
+            redElements.forEach(el => {
+                el.setAttribute('stroke', color);
+            });
+            
+            // Update red elements with opacity
+            const redOpacityElements = svg.querySelectorAll('[stroke="#ff2e2e"]');
+            redOpacityElements.forEach(el => {
+                el.setAttribute('stroke', color);
+            });
+        }
+        
+        function updateBackground(bg) {
+            const display = document.querySelector('.icon-display');
+            
+            if (bg === 'transparent') {
+                display.style.background = 
+                    'linear-gradient(45deg, #f0f0f0 25%, transparent 25%), ' +
+                    'linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), ' +
+                    'linear-gradient(45deg, transparent 75%, #f0f0f0 75%), ' +
+                    'linear-gradient(-45deg, transparent 75%, #f0f0f0 75%)';
+                display.style.backgroundSize = '20px 20px';
+                display.style.backgroundPosition = '0 0, 0 10px, 10px -10px, -10px 0px';
+            } else if (bg === 'gradient') {
+                display.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            } else {
+                display.style.background = bg;
+            }
+        }
+        
+        function darkenColor(color, percent) {
+            const num = parseInt(color.replace("#", ""), 16);
+            const amt = Math.round(2.55 * percent);
+            const R = (num >> 16) - amt;
+            const G = (num >> 8 & 0x00FF) - amt;
+            const B = (num & 0x0000FF) - amt;
+            
+            return "#" + (
+                0x1000000 +
+                (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
+                (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
+                (B < 255 ? B < 1 ? 0 : B : 255)
+            ).toString(16).slice(1);
+        }
+        
+        function downloadSVG() {
+            const svg = document.getElementById('main-icon');
+            const serializer = new XMLSerializer();
+            let source = serializer.serializeToString(svg);
+            
+            // Add namespaces
+            if (!source.match(/^<svg[^>]+xmlns="http:\/\/www\.w3\.org\/2000\/svg"/)) {
+                source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+            }
+            if (!source.match(/^<svg[^>]+"http:\/\/www\.w3\.org\/1999\/xlink"/)) {
+                source = source.replace(/^<svg/, '<svg xmlns:xlink="http://www.w3.org/1999/xlink"');
+            }
+            
+            // Add styling for standalone SVG
+            source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
+            
+            // Create download link
+            const url = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(source);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "3d-cluster-icon.svg";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        // Initialize with red color
+        updateIconColor('#ff2e2e');
+    </script>
+</body>
+</html>
+
+<!-- ============================
+  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Cluster Infinite Loop Cube</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 20px;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1000px;
+            gap: 40px;
+        }
+        
+        .icon-display {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .icon-canvas {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+        }
+        
+        .controls-panel {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            width: 100%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .control-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            color: #1a202c;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 6px;
+            height: 20px;
+            background: #ff2e2e;
+            border-radius: 3px;
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        
+        .color-swatch {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .color-swatch:hover {
+            transform: scale(1.05);
+        }
+        
+        .color-swatch.active {
+            border-color: #1a202c;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .color-primary { background: #000000; }
+        .color-red { background: #ff2e2e; }
+        .color-blue { background: #2563eb; }
+        .color-purple { background: #7c3aed; }
+        .color-teal { background: #0d9488; }
+        .color-orange { background: #ea580c; }
+        .color-gray { background: #4b5563; }
+        .color-white { background: white; border: 2px solid #e5e7eb; }
+        
+        .slider-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            color: #4b5563;
+            font-size: 0.9rem;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 6px;
+            -webkit-appearance: none;
+            background: #e5e7eb;
+            border-radius: 3px;
+            outline: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #ff2e2e;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .toggle-switch {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .toggle-label {
+            color: #374151;
+            font-weight: 500;
+        }
+        
+        .toggle {
+            position: relative;
+            width: 50px;
+            height: 26px;
+        }
+        
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #d1d5db;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .toggle-slider {
+            background-color: #ff2e2e;
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(24px);
+        }
+        
+        .concept-explanation {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            width: 100%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .concept-title {
+            font-size: 1.5rem;
+            color: #1a202c;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .concept-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 4px solid #ff2e2e;
+            transition: transform 0.3s ease;
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-5px);
+            background: #f1f5f9;
+        }
+        
+        .concept-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff2e2e, #d10000);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .concept-card h4 {
+            color: #1a202c;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .concept-card p {
+            color: #4b5563;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .download-btn {
+            margin-top: 30px;
+            background: linear-gradient(135deg, #000000, #1a202c);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            background: linear-gradient(135deg, #ff2e2e, #d10000);
+        }
+        
+        .visualization-mode {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .viz-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #4b5563;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .viz-btn.active {
+            background: #ff2e2e;
+            color: white;
+            border-color: #ff2e2e;
+        }
+        
+        @media (max-width: 768px) {
+            .icon-display {
+                width: 350px;
+                height: 350px;
+            }
+            
+            .controls-panel {
+                grid-template-columns: 1fr;
+            }
+            
+            .color-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="visualization-mode">
+            <button class="viz-btn active" id="viz-full">Full Icon</button>
+            <button class="viz-btn" id="viz-progress">Progress View</button>
+            <button class="viz-btn" id="viz-wireframe">Wireframe</button>
+        </div>
+        
+        <div class="icon-display">
+            <canvas class="icon-canvas" id="iconCanvas" width="1000" height="1000"></canvas>
+        </div>
+        
+        <div class="controls-panel">
+            <div class="control-section">
+                <div class="section-title">Color Palette</div>
+                <div class="color-grid">
+                    <div class="color-swatch color-primary active" data-color="primary" title="Primary Black"></div>
+                    <div class="color-swatch color-red" data-color="red" title="Accent Red"></div>
+                    <div class="color-swatch color-blue" data-color="blue" title="Blue Accent"></div>
+                    <div class="color-swatch color-purple" data-color="purple" title="Purple Accent"></div>
+                    <div class="color-swatch color-teal" data-color="teal" title="Teal Accent"></div>
+                    <div class="color-swatch color-orange" data-color="orange" title="Orange Accent"></div>
+                    <div class="color-swatch color-gray" data-color="gray" title="Gray Base"></div>
+                    <div class="color-swatch color-white" data-color="white" title="White Base"></div>
+                </div>
+            </div>
+            
+            <div class="control-section">
+                <div class="section-title">3D Properties</div>
+                <div class="slider-container">
+                    <div class="slider-label">
+                        <span>Depth</span>
+                        <span id="depthValue">60%</span>
+                    </div>
+                    <input type="range" min="20" max="100" value="60" class="slider" id="depthSlider">
+                </div>
+                
+                <div class="slider-container">
+                    <div class="slider-label">
+                        <span>Highlight Intensity</span>
+                        <span id="highlightValue">75%</span>
+                    </div>
+                    <input type="range" min="10" max="100" value="75" class="slider" id="highlightSlider">
+                </div>
+            </div>
+            
+            <div class="control-section">
+                <div class="section-title">Visual Effects</div>
+                <div class="toggle-switch">
+                    <span class="toggle-label">Animation</span>
+                    <label class="toggle">
+                        <input type="checkbox" id="animationToggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                
+                <div class="toggle-switch">
+                    <span class="toggle-label">Shadows</span>
+                    <label class="toggle">
+                        <input type="checkbox" id="shadowToggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                
+                <div class="slider-container">
+                    <div class="slider-label">
+                        <span>Transformation</span>
+                        <span id="transformationValue">100%</span>
+                    </div>
+                    <input type="range" min="0" max="100" value="100" class="slider" id="transformationSlider">
+                </div>
+            </div>
+        </div>
+        
+        <div class="concept-explanation">
+            <h3 class="concept-title">Icon Design Philosophy</h3>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">△</div>
+                    <h4>Infinite Loop Triangle</h4>
+                    <p>Represents the continuous cycle of "Learn → Work → Succeed" - the core educational philosophy. The open triangular form symbolizes infinite growth and progression in tech education.</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">◻</div>
+                    <h4>Solid Cubic Cluster</h4>
+                    <p>Transforms from the loop into a permanent 3D structure, representing solidified skills, career growth, and tangible results. The clustering nodes show knowledge consolidation.</p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-icon">⚡</div>
+                    <h4>Dynamic Transformation</h4>
+                    <p>The fluid morphing between forms embodies the transition from learning to mastery. Red highlights emphasize critical learning milestones and career breakthroughs.</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="download-btn" onclick="downloadIcon()">
+            <span>Download Vector Icon (SVG)</span>
+        </button>
+    </div>
+    
+    <script>
+        // Canvas setup
+        const canvas = document.getElementById('iconCanvas');
+        const ctx = canvas.getContext('2d');
+        const dpr = window.devicePixelRatio || 1;
+        
+        // Set canvas dimensions with high DPI for crisp rendering
+        const size = Math.min(canvas.parentElement.clientWidth, canvas.parentElement.clientHeight);
+        canvas.width = size * dpr;
+        canvas.height = size * dpr;
+        canvas.style.width = size + 'px';
+        canvas.style.height = size + 'px';
+        ctx.scale(dpr, dpr);
+        
+        // Design variables
+        let primaryColor = '#000000';
+        let accentColor = '#ff2e2e';
+        let depth = 0.6;
+        let highlightIntensity = 0.75;
+        let showAnimation = true;
+        let showShadows = true;
+        let transformation = 1.0;
+        let visualizationMode = 'full';
+        let animationPhase = 0;
+        
+        // Color presets
+        const colorPresets = {
+            primary: '#000000',
+            red: '#ff2e2e',
+            blue: '#2563eb',
+            purple: '#7c3aed',
+            teal: '#0d9488',
+            orange: '#ea580c',
+            gray: '#4b5563',
+            white: '#ffffff'
+        };
+        
+        // Initialize UI controls
+        document.getElementById('depthSlider').value = depth * 100;
+        document.getElementById('highlightSlider').value = highlightIntensity * 100;
+        document.getElementById('transformationSlider').value = transformation * 100;
+        
+        // Color swatch selection
+        document.querySelectorAll('.color-swatch').forEach(swatch => {
+            swatch.addEventListener('click', function() {
+                document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+                this.classList.add('active');
+                
+                const colorType = this.getAttribute('data-color');
+                if (colorType === 'primary') {
+                    primaryColor = colorPresets[colorType];
+                } else if (colorType === 'red') {
+                    accentColor = colorPresets[colorType];
+                }
+                
+                // For accent colors, update both if they're red
+                if (['red', 'blue', 'purple', 'teal', 'orange'].includes(colorType)) {
+                    accentColor = colorPresets[colorType];
+                }
+            });
+        });
+        
+        // Slider events
+        document.getElementById('depthSlider').addEventListener('input', function() {
+            depth = this.value / 100;
+            document.getElementById('depthValue').textContent = this.value + '%';
+        });
+        
+        document.getElementById('highlightSlider').addEventListener('input', function() {
+            highlightIntensity = this.value / 100;
+            document.getElementById('highlightValue').textContent = this.value + '%';
+        });
+        
+        document.getElementById('transformationSlider').addEventListener('input', function() {
+            transformation = this.value / 100;
+            document.getElementById('transformationValue').textContent = this.value + '%';
+        });
+        
+        // Toggle events
+        document.getElementById('animationToggle').addEventListener('change', function() {
+            showAnimation = this.checked;
+        });
+        
+        document.getElementById('shadowToggle').addEventListener('change', function() {
+            showShadows = this.checked;
+        });
+        
+        // Visualization mode buttons
+        document.querySelectorAll('.viz-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.viz-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                visualizationMode = this.id.replace('viz-', '');
+            });
+        });
+        
+        // Main drawing function
+        function drawIcon() {
+            const width = canvas.width / dpr;
+            const height = canvas.height / dpr;
+            const centerX = width / 2;
+            const centerY = height / 2;
+            const baseSize = Math.min(width, height) * 0.35;
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, width, height);
+            
+            // Calculate animated phase
+            if (showAnimation) {
+                animationPhase = (animationPhase + 0.005) % (2 * Math.PI);
+            }
+            
+            // Draw subtle background grid for 3D effect
+            if (visualizationMode === 'wireframe') {
+                drawGrid(centerX, centerY, baseSize);
+            }
+            
+            // Calculate transformation interpolation
+            const t = transformation;
+            
+            // Draw the icon with hybrid flat+3D aesthetic
+            if (visualizationMode === 'full' || visualizationMode === 'wireframe') {
+                drawTransformedShape(centerX, centerY, baseSize, t);
+            } else if (visualizationMode === 'progress') {
+                drawProgressStages(centerX, centerY, baseSize);
+            }
+            
+            // Request next frame
+            requestAnimationFrame(drawIcon);
+        }
+        
+        function drawGrid(centerX, centerY, size) {
+            ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.lineWidth = 1;
+            
+            // Horizontal lines
+            for (let i = -3; i <= 3; i++) {
+                const y = centerY + i * size * 0.2;
+                ctx.beginPath();
+                ctx.moveTo(centerX - size * 0.6, y);
+                ctx.lineTo(centerX + size * 0.6, y);
+                ctx.stroke();
+            }
+            
+            // Vertical lines
+            for (let i = -3; i <= 3; i++) {
+                const x = centerX + i * size * 0.2;
+                ctx.beginPath();
+                ctx.moveTo(x, centerY - size * 0.6);
+                ctx.lineTo(x, centerY + size * 0.6);
+                ctx.stroke();
+            }
+        }
+        
+        function drawTransformedShape(centerX, centerY, size, t) {
+            // Calculate points for triangular loop (phase 1)
+            const loopPoints = calculateLoopPoints(centerX, centerY, size);
+            
+            // Calculate points for cubic cluster (phase 2)
+            const cubePoints = calculateCubePoints(centerX, centerY, size);
+            
+            // Interpolate between loop and cube based on transformation
+            const points = [];
+            for (let i = 0; i < loopPoints.length; i++) {
+                const x = loopPoints[i].x * (1 - t) + cubePoints[i].x * t;
+                const y = loopPoints[i].y * (1 - t) + cubePoints[i].y * t;
+                points.push({x, y});
+            }
+            
+            // Draw shadows
+            if (showShadows) {
+                drawShadows(points, centerX, centerY, size);
+            }
+            
+            // Draw main geometry
+            drawMainGeometry(points, centerX, centerY, size, t);
+            
+            // Draw highlights and accents
+            drawHighlights(points, centerX, centerY, size, t);
+        }
+        
+        function calculateLoopPoints(centerX, centerY, size) {
+            const points = [];
+            const loopPhase = showAnimation ? Math.sin(animationPhase) * 0.2 : 0;
+            
+            // Triangular loop with infinity symbol influence
+            for (let i = 0; i < 3; i++) {
+                const angle = (i * 2 * Math.PI / 3) + loopPhase;
+                const radius = size * (0.9 + Math.sin(animationPhase + i) * 0.1);
+                const x = centerX + Math.cos(angle) * radius;
+                const y = centerY + Math.sin(angle) * radius;
+                points.push({x, y});
+            }
+            
+            // Add intermediate points for smooth curves
+            const extendedPoints = [];
+            for (let i = 0; i < points.length; i++) {
+                const p1 = points[i];
+                const p2 = points[(i + 1) % points.length];
+                const mid = {
+                    x: (p1.x + p2.x) / 2,
+                    y: (p1.y + p2.y) / 2
+                };
+                
+                // Curve the midpoint outward for infinity effect
+                const angle = Math.atan2(mid.y - centerY, mid.x - centerX);
+                const curveRadius = size * 0.7;
+                mid.x = centerX + Math.cos(angle) * curveRadius;
+                mid.y = centerY + Math.sin(angle) * curveRadius;
+                
+                extendedPoints.push(p1);
+                extendedPoints.push(mid);
+            }
+            
+            return extendedPoints;
+        }
+        
+        function calculateCubePoints(centerX, centerY, size) {
+            const cubeDepth = depth * size * 0.4;
+            const points = [];
+            
+            // Front face of cube
+            for (let i = 0; i < 4; i++) {
+                const angle = (i * Math.PI / 2) - Math.PI / 4;
+                const x = centerX + Math.cos(angle) * size * 0.7;
+                const y = centerY + Math.sin(angle) * size * 0.7;
+                points.push({x, y, z: -cubeDepth});
+            }
+            
+            // Back face of cube (offset by depth)
+            for (let i = 0; i < 4; i++) {
+                const angle = (i * Math.PI / 2) - Math.PI / 4;
+                const x = centerX + Math.cos(angle) * size * 0.5;
+                const y = centerY + Math.sin(angle) * size * 0.5;
+                points.push({x, y, z: cubeDepth});
+            }
+            
+            return points;
+        }
+        
+        function drawShadows(points, centerX, centerY, size) {
+            // Draw soft shadow
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.beginPath();
+            ctx.ellipse(centerX + size * 0.1, centerY + size * 0.1, 
+                       size * 0.8, size * 0.3, 0, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        
+        function drawMainGeometry(points, centerX, centerY, size, t) {
+            // Draw triangular loop/cube hybrid
+            ctx.strokeStyle = primaryColor;
+            ctx.lineWidth = 3;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            
+            if (points.length >= 6) {
+                // Draw the main triangular form
+                ctx.beginPath();
+                ctx.moveTo(points[0].x, points[0].y);
+                
+                for (let i = 1; i < points.length; i++) {
+                    const p = points[i];
+                    
+                    if (i % 2 === 0) {
+                        // Corner point
+                        ctx.lineTo(p.x, p.y);
+                    } else {
+                        // Midpoint - curve to it
+                        const prev = points[i-1];
+                        const next = points[(i+1) % points.length];
+                        const cp1x = prev.x + (p.x - prev.x) * 0.5;
+                        const cp1y = prev.y + (p.y - prev.y) * 0.5;
+                        const cp2x = p.x + (next.x - p.x) * 0.5;
+                        const cp2y = p.y + (next.y - p.y) * 0.5;
+                        
+                        ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, next.x, next.y);
+                        i++; // Skip next point as we already drew to it
+                    }
+                }
+                
+                ctx.closePath();
+                ctx.stroke();
+                
+                // Fill with subtle gradient if more cube-like
+                if (t > 0.5) {
+                    const gradient = ctx.createRadialGradient(
+                        centerX, centerY, 0,
+                        centerX, centerY, size
+                    );
+                    gradient.addColorStop(0, `rgba(0, 0, 0, ${0.05 * t})`);
+                    gradient.addColorStop(1, 'transparent');
+                    
+                    ctx.fillStyle = gradient;
+                    ctx.fill();
+                }
+            }
+            
+            // Draw internal connections for cluster effect
+            ctx.strokeStyle = `rgba(0, 0, 0, ${0.3 + 0.3 * t})`;
+            ctx.lineWidth = 1.5;
+            
+            if (points.length > 3) {
+                // Connect points to center
+                for (let i = 0; i < Math.min(3, points.length); i += 2) {
+                    ctx.beginPath();
+                    ctx.moveTo(centerX, centerY);
+                    ctx.lineTo(points[i].x, points[i].y);
+                    ctx.stroke();
+                }
+                
+                // Connect points to each other
+                for (let i = 0; i < Math.min(3, points.length); i += 2) {
+                    for (let j = i + 2; j < Math.min(3, points.length); j += 2) {
+                        ctx.beginPath();
+                        ctx.moveTo(points[i].x, points[i].y);
+                        ctx.lineTo(points[j].x, points[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+        
+        function drawHighlights(points, centerX, centerY, size, t) {
+            // Draw red accent edges
+            ctx.strokeStyle = accentColor;
+            ctx.lineWidth = 3 * highlightIntensity;
+            
+            if (points.length >= 6) {
+                // Highlight the transformation edges
+                ctx.beginPath();
+                for (let i = 0; i < 3; i++) {
+                    const p = points[i * 2];
+                    if (i === 0) {
+                        ctx.moveTo(p.x, p.y);
+                    } else {
+                        ctx.lineTo(p.x, p.y);
+                    }
+                }
+                ctx.closePath();
+                ctx.stroke();
+                
+                // Draw glowing nodes at vertices
+                for (let i = 0; i < 3; i++) {
+                    const p = points[i * 2];
+                    
+                    // Outer glow
+                    const gradient = ctx.createRadialGradient(
+                        p.x, p.y, 0,
+                        p.x, p.y, 8 * highlightIntensity
+                    );
+                    gradient.addColorStop(0, accentColor);
+                    gradient.addColorStop(1, 'transparent');
+                    
+                    ctx.fillStyle = gradient;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 8 * highlightIntensity, 0, Math.PI * 2);
+                    ctx.fill();
+                    
+                    // Solid center
+                    ctx.fillStyle = accentColor;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+            
+            // Draw center cluster node
+            const centerGlow = ctx.createRadialGradient(
+                centerX, centerY, 0,
+                centerX, centerY, 15 * t
+            );
+            centerGlow.addColorStop(0, accentColor);
+            centerGlow.addColorStop(1, 'transparent');
+            
+            ctx.fillStyle = centerGlow;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 15 * t, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.fillStyle = accentColor;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 6 * t, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        
+        function drawProgressStages(centerX, centerY, size) {
+            const stages = [
+                {label: "Learn", progress: 0.33},
+                {label: "Work", progress: 0.66},
+                {label: "Succeed", progress: 1.0}
+            ];
+            
+            const angleStep = (2 * Math.PI) / stages.length;
+            const baseRadius = size * 0.8;
+            
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.font = 'bold 16px sans-serif';
+            
+            stages.forEach((stage, index) => {
+                const angle = index * angleStep - Math.PI / 2;
+                const x = centerX + Math.cos(angle) * baseRadius;
+                const y = centerY + Math.sin(angle) * baseRadius;
+                
+                // Draw stage node
+                ctx.fillStyle = index === 2 ? accentColor : primaryColor;
+                ctx.beginPath();
+                ctx.arc(x, y, 10, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Draw label
+                ctx.fillStyle = primaryColor;
+                ctx.fillText(stage.label, x, y - 25);
+                
+                // Draw progress arc
+                if (index > 0) {
+                    const prevAngle = (index - 1) * angleStep - Math.PI / 2;
+                    const prevX = centerX + Math.cos(prevAngle) * baseRadius;
+                    const prevY = centerY + Math.sin(prevAngle) * baseRadius;
+                    
+                    ctx.strokeStyle = accentColor;
+                    ctx.lineWidth = 3;
+                    ctx.lineCap = 'round';
+                    
+                    ctx.beginPath();
+                    ctx.moveTo(prevX, prevY);
+                    ctx.lineTo(x, y);
+                    ctx.stroke();
+                }
+            });
+            
+            // Draw center cluster
+            ctx.fillStyle = accentColor;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 15, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        
+        function downloadIcon() {
+            // Create a temporary canvas for high-res export
+            const exportCanvas = document.createElement('canvas');
+            const exportCtx = exportCanvas.getContext('2d');
+            const exportSize = 2000; // High resolution for print
+            
+            exportCanvas.width = exportSize;
+            exportCanvas.height = exportSize;
+            
+            // Scale context for crisp rendering
+            exportCtx.scale(exportSize / (canvas.width / dpr), exportSize / (canvas.height / dpr));
+            
+            // Redraw at high resolution
+            const oldDPR = dpr;
+            const oldSize = {width: canvas.width, height: canvas.height};
+            
+            // Temporarily set to export size
+            canvas.width = exportSize;
+            canvas.height = exportSize;
+            ctx.scale(exportSize / (oldSize.width / oldDPR), exportSize / (oldSize.height / oldDPR));
+            
+            // Draw one frame at high resolution
+            drawHighResFrame();
+            
+            // Convert to SVG-like data URL
+            const dataURL = canvas.toDataURL('image/png');
+            
+            // Restore original canvas size
+            canvas.width = oldSize.width;
+            canvas.height = oldSize.height;
+            ctx.scale((oldSize.width / oldDPR) / exportSize, (oldSize.height / oldDPR) / exportSize);
+            
+            // Trigger download
+            const link = document.createElement('a');
+            link.download = '3d-cluster-icon.png';
+            link.href = dataURL;
+            link.click();
+        }
+        
+        function drawHighResFrame() {
+            // Simplified draw for high-res export
+            const width = canvas.width;
+            const height = canvas.height;
+            const centerX = width / 2;
+            const centerY = height / 2;
+            const size = Math.min(width, height) * 0.35;
+            
+            ctx.clearRect(0, 0, width, height);
+            drawTransformedShape(centerX, centerY, size, 1.0);
+        }
+        
+        // Start animation
+        drawIcon();
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            const size = Math.min(canvas.parentElement.clientWidth, canvas.parentElement.clientHeight);
+            canvas.style.width = size + 'px';
+            canvas.style.height = size + 'px';
+            canvas.width = size * dpr;
+            canvas.height = size * dpr;
+            ctx.scale(dpr, dpr);
+        });
+    </script>
+</body>
+</html>
