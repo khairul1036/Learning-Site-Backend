@@ -635,3 +635,23 @@
   level: 'info',
   timestamp: '06-12-2025 11:22:17'
 }
+{
+  message: 'Redis has been connected',
+  level: 'info',
+  timestamp: '06-12-2025 12:13:06'
+}
+{
+  message: 'MongoDB connected',
+  level: 'info',
+  timestamp: '06-12-2025 12:13:07'
+}
+{
+  message: 'Server running on port http://localhost:5000',
+  level: 'info',
+  timestamp: '06-12-2025 12:13:07'
+}
+{
+  message: '_________________________',
+  level: 'info',
+  timestamp: '06-12-2025 12:13:07'
+}
