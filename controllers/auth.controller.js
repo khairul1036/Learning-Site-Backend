@@ -44,7 +44,7 @@ exports.otpVerification = async (req, res) => {
     otpHtmlContent = otpHtmlContent.replace("000000", generatedOtpCode)
 
     if (email && otpHtmlContent)
-      sendEmail(email, "OTP Code - ProximaIT", otpHtmlContent)
+      sendEmail(email, "OTP Code - 3D Cluster", otpHtmlContent)
 
     // Storing OTP into database.
     const existingOtp = await Otp.findOne({ email })

@@ -12,7 +12,7 @@ async function sendEmail(email, subject, htmlContent) {
   const mailOptions = {
     from: process.env.EMAIL_ADDRESS,
     to: email,
-    subject: subject || "ProximaIT Email",
+    subject: subject || "3D Cluster Email",
     html: htmlContent,
   }
 
