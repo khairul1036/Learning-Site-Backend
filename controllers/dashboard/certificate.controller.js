@@ -16,7 +16,7 @@ exports.certificateController = async (req, res) => {
 
     // Input Decorations
     if (!isNaN(Number(studentId))) {
-      studentId = `LIT-${studentId}`
+      studentId = `SID-${studentId}`
     }
     courseId = courseId.toLowerCase().split(" ").join("-")
 
@@ -77,13 +77,9 @@ exports.certificateController = async (req, res) => {
       .toString()
 
     // 2025-ABC${sid}
-    const certificateId = `${courseYear}-${courseCode.toUpperCase()}${
-      sid.split("-")[1]
-    }`
+    const certificateId = `${courseYear}-${courseCode.toUpperCase()}${sid.split("-")[1]}`
     // 2025/ABC/${sid}
-    const regId = `${courseYear}/${courseCode.toUpperCase()}/${
-      sid.split("-")[1]
-    }`
+    const regId = `${courseYear}/${courseCode.toUpperCase()}/${sid.split("-")[1]}`
 
     // Checking if the issue date is already issued
     let existingCertificate
@@ -135,7 +131,7 @@ exports.certificateController = async (req, res) => {
         "Content-Disposition": `attachment; filename=certificate.pdf`,
         "Content-Length": pdfBuffer.length,
       })
-
+      console.log(pdfBuffer)
       res.end(pdfBuffer)
     } else {
       const customError = new Error(

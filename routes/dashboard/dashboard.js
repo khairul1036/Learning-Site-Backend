@@ -37,8 +37,7 @@ const resetInfo = require("@controllers/dashboard/profile.controller")
 // Middlewares
 // const rateLimiter = require("@middlewares/rateLimiter")
 
-// ROOT: /api/dashboard
-
+// ROOT: /api/dashboard - fixed
 router.get(
   "/",
   // rateLimiter(
@@ -56,6 +55,7 @@ router.post("/notices", verifyJWT, addNotice)
 router.patch("/notices/:id", verifyJWT, updateNotice)
 router.delete("/notices/:id", verifyJWT, deleteNotice)
 
+// reset/update profile - fixed
 router.post(
   "/reset",
   // Comment out the rate limiter for now
@@ -65,16 +65,19 @@ router.post(
   resetInfo
 )
 
+// registration pdf generator - not fixed
 router.post(
   "/registration",
   // rateLimiter(60 * 1000, 1, "Limit Exceed!"),
   registrationController
 )
 
+// certificate - fixed
 router.get("/certificate/apply", getApplyCertificateController)
 router.post("/certificate/apply", postApplyController)
 router.post("/certificate/apply/:action", actionApplyController)
 
+// certificate - fixed but response not checked
 router.post(
   "/certificate",
   // rateLimiter(60 * 1000, 1, "Limit Exceed!"),

@@ -109,7 +109,7 @@ async function getNextSequence(name) {
 studentSchema.pre("save", async function (next) {
   if (this.isNew) {
     const sid = await getNextSequence("studentID")
-    this.sid = `LIT-${sid.toString().padStart(5, "0")}`
+    this.sid = `SID-${sid.toString().padStart(5, "0")}`
   }
   next()
 })
